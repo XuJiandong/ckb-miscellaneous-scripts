@@ -688,7 +688,7 @@ int iso97962_verify(ISO97962Encoding *enc, const uint8_t *block,
   const mbedtls_md_info_t *digest = mbedtls_md_info_from_type(enc->md);
   int hash_len = digest->size;
   uint8_t hash[hash_len];
-  int alloc_buff_size = 1024 * 1024;
+  int alloc_buff_size = 1024 * 7;
   uint8_t alloc_buff[alloc_buff_size];
   mbedtls_memory_buffer_alloc_init(alloc_buff, alloc_buff_size);
 
@@ -793,7 +793,7 @@ int validate_signature_iso9796_2(void *_p, const uint8_t *sig_buf,
   uint8_t new_msg[key_size * 2];
   uint32_t new_msg_len = key_size;
 
-  int alloc_buff_size = 1024 * 1024;
+  int alloc_buff_size = 1024 * 7;
   unsigned char alloc_buff[alloc_buff_size];
   mbedtls_memory_buffer_alloc_init(alloc_buff, alloc_buff_size);
 
